@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Design patterns quiz
+  <h1 style="color: #811611">
+    Design patterns
   </h1>
 </div>
 <div class="row" [hidden]="!questionsPage">
@@ -34,15 +34,11 @@
             Quiz Score Page
         </h3>
         <div style="text-align:center">
-                <h3>
-                    Review Quiz
-                </h3>
-
-                <h4 style="color:#0F9598">
+                <h4 style="color: #3d981f">
                     {{message}}
                 </h4>
 
-                <h4 style="color:#0A8A98">
+                <h4 style="color: #3d981f">
                     You have {{score}} right answers <br>
                     You have {{20-score}} wrong answers
                 </h4>
@@ -76,16 +72,15 @@
 <div class="row" [hidden]="!reviewPage">
         <div class="col-lg-10 col-lg-offset-1 jumbotron">
             <div style="text-align:center">
-                <h3>
-                    Review Quiz
+                <h3 style="color: #000000">
+                    Quiz Result
                 </h3>
 
-                <h4 style="color:#0F9598">
+                <h4 style="color: #3d981f">
                     {{message}}
                 </h4>
 
-                <h4 style="color:#0A8A98">
-                    Your success percentage is {{percentage}}%
+                <h4 style="color: #3d981f">
                     You have {{score}} right answers
                 </h4>
             </div>
