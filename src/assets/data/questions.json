@@ -1,0 +1,221 @@
+{
+    "data":
+    [
+    {
+        "question":0,
+        "statement":" Which of the following is correct about Creational design patterns",
+        "options":[
+        "These design patterns are specifically concerned with communication between objects.",
+        "These design patterns provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator.",
+        "These design patterns concern class and object composition. Concept of inheritance is used to compose interfaces and define ways to compose objects to obtain new functionalities.",
+        "None of the above."
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":1,
+        "statement":"Which of the following describes the Facade pattern correctly?",
+        "options":[
+        "This pattern allows a user to add new functionality to an existing object without altering its structure.",
+        "This pattern is used where we need to treat a group of objects in similar way as a single object.",
+        "This pattern hides the complexities of the system and provides an interface to the client using which the client can access the system.",
+        "This pattern is primarily used to reduce the number of objects created and to decrease memory footprint and increase performance."
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":2,
+        "statement":"In which of the following pattern a class represents functionality of another class?",
+        "options":[
+        "Chain of Responsibility Pattern",
+        "Command Pattern",
+        "Interpreter Pattern",
+        "Proxy Pattern"
+        ],
+        "right_answer":"4"
+    },
+    {
+        "question":3,
+        "statement":"Which of the following describes the Observer pattern correctly?",
+        "options":[
+        "This pattern is used to get a way to access the elements of a collection object in sequential manner without any need to know its underlying representation.",
+        "This pattern is used to reduce communication complexity between multiple objects or classes.",
+        "This pattern is used to restore state of an object to a previous state.",
+        "This pattern is used when there is one-to-many relationship between objects such as if one object is modified, its depenedent objects are to be notified automatically."
+        ],
+        "right_answer":"4"
+    },
+    {
+        "question":4,
+        "statement":"Which of the following describes the Template pattern correctly?",
+        "options":[
+        "In this pattern, a class behavior changes based on its state.",
+        "In this pattern, a null object replaces check of NULL object instance.",
+        "In this pattern, a class behavior or its algorithm can be changed at run time.",
+        "In this pattern, an abstract class exposes defined way(s)/template(s) to execute its methods"
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":5,
+        "statement":"If we serialize a singleton object and deserialize it then the result object will be same",
+        "options":[
+        "False",
+        "True"
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":6,
+        "statement":"In which of the following pattern, an abstract class exposes defined way(s)/template(s) to execute its methods?",
+        "options":[
+        "State Pattern",
+        "Null Object Pattern",
+        "Strategy Pattern",
+        "Template Pattern"
+        ],
+        "right_answer":"4"
+    },
+    {
+        "question":7,
+        "statement":"Which of the following pattern is used to separate application's concerns?",
+        "options":[
+        "Visitor Pattern",
+        "MVC Pattern",
+        "Business Delegate Pattern",
+        "Composite Entity Pattern"
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":8,
+        "statement":"Which of the following is the correct list of entities of DAO pattern?",
+        "options":[
+        "Data Access Object Interface, Model Object or Value Object.",
+        "Data Access Object Interface, Data Access Object concrete class.",
+        "Data Access Object Interface, Data Access Object concrete class, Model Object or Value Object.",
+        "Data Access Object concrete class, Model Object or Value Object."
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":9,
+        "statement":"Which of the following is the correct list of entities of MVC pattern?",
+        "options":[
+        "Model, Viewer, Control.",
+        "Middle, Viewer, Controller.",
+        "Model, View, Control.",
+        "Model, View, Controller."
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":10,
+        "statement":"Which of the following describes the Front Controller pattern correctly?",
+        "options":[
+        "This pattern is used to provide a centralized request handling mechanism so that all requests will be handled by a single handler.",
+        "This pattern is used when we want to do some pre-processing / post-processing with request or response of the application.",
+        "This pattern is used to separate low level data accessing API or operations from high level business services.",
+        "This pattern is used when we want to locate various services using JNDI lookup."
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":11,
+        "statement":"Which of the following describes the Structural pattern correctly?",
+        "options":[
+        "This type of patterns concern class and object composition. Concept of inheritance is used to compose interfaces and define ways to compose objects to obtain new functionalities",
+        "This type of pattern are specifically concerned with communication between objects.",
+        "This type of patterns provide a way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator.",
+        "This type of pattern are specifically concerned with the presentation tier."
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":12,
+        "statement":"Which of the following describes the Strategy pattern correctly?",
+        "options":[
+        "In this pattern, a class behavior changes based on its state.",
+        "In this pattern, a null object replaces check of NULL object instance.",
+        "In this pattern, a class behavior or its algorithm can be changed at run time.",
+        "In this pattern, an abstract class exposes defined way(s)/template(s) to execute its methods."
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":13,
+        "statement":"Which of the following pattern is used when we want to locate various services using JNDI lookup?",
+        "options":[
+        "DAO Pattern.",
+        "Front Controller Pattern.",
+        "Intercepting Pattern.",
+        "Service Locator Pattern"
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":14,
+        "statement":"Which of the following pattern refers to creating duplicate object while keeping performance in mind?",
+        "options":[
+        "Builder Pattern.",
+        "Bridge Pattern.",
+        "Prototype Pattern.",
+        "Filter Pattern."
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":15,
+        "statement":"Which of the following pattern involves a single class which is responsible to create an object while making sure that only single object gets created?",
+        "options":[
+        "Factory Pattern.",
+        "Abstract Factory Pattern.",
+        "Singleton Pattern.",
+        "Transfer Object Pattern."
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":16,
+        "statement":"Which of the following is correct about Abstract Factory design pattern?",
+        "options":[
+        "This type of design pattern comes under creational pattern.",
+        "Abstract Factory patterns work around a super-factory which creates other factories.",
+        "In Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes.",
+        "All of the above."
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":17,
+        "statement":"Which of the following pattern is used when we want to pass data with multiple attributes in one shot from client to server?",
+        "options":[
+        "Factory Pattern",
+        "Abstract Factory Pattern",
+        "Singleton Pattern",
+        "Transfer Object Pattern"
+        ],
+        "right_answer":"3"
+    },
+    {
+        "question":18,
+        "statement":"Runtime class is an example of singleton.",
+        "options":[
+        "True",
+        "False"
+        ],
+        "right_answer":"2"
+    },
+    {
+        "question":19,
+        "statement":"Which of the following pattern creates object without exposing the creation logic to the client and refer to newly created object using a common interface?",
+        "options":[
+        "Abstract Factory Pattern",
+        "Singleton Pattern",
+        "Factory Pattern",
+        "Transfer Object Pattern"
+        ],
+        "right_answer":"2"
+    }
+    ]
+}

@@ -1,20 +1,122 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Design patterns quiz
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="row" [hidden]="!questionsPage">
+    <div class="col-lg-10 col-lg-offset-1 jumbotron form" *ngFor="let data of mapData | currentquestion:currentValue;let q=index">
+        <span class="badge progress-bar-info"></span>
+        <div class="col-lg-12">
+          <h3 class="statement-question">{{data.key+1}}. {{data.statement}}</h3>
+        </div>
+        <div class="col-lg-5 option col-lg-offset-1" *ngFor="let option of data.options; let i = index">
+            <label class="radio-inline"><input type="radio" name="optcheck" (click)="setAnswer(i,data.key)" [checked]="data.answer == i">{{option}}</label>
+        </div>
+        <div class="col-lg-12" style="text-align:center">
+            <button type="submit" class="btn btn-default" (click)="processQuestions('First')" [disabled]="currentValue==0"> First </button>
+            <button type="submit" class="btn btn-info" (click)="processQuestions('Preview')" [disabled]="currentValue==0"> Preview </button>
+            <button type="submit" class="btn btn-info" (click)="processQuestions('Next')" [disabled]="currentValue==totalQuestions"> Next </button>
+            <button type="submit" class="btn btn-default" (click)="processQuestions('Last')" [disabled]="currentValue==totalQuestions"> Last </button>
+        </div>
 
+        <div class="col-lg-12 final-button">
+            <button type="submit" class="btn btn-default" (click)="resetAnswers()"><i class="fa fa-refresh"></i> Quiz </button>
+            <button type="submit" class="btn btn-default" [disabled]=true><i class="fa fa-search"></i> Review </button>
+            <button type="submit" class="btn btn-default" (click)="submitQuiz()"><i class="fa fa-check"></i> Submit Quiz </button>
+        </div>
+    </div>
+</div>
+
+<div class="row" [hidden]="!scorePage">
+    <div class="col-lg-10 col-lg-offset-1 jumbotron">
+        <h3 style="text-align:center">
+            Quiz Score Page
+        </h3>
+        <div style="text-align:center">
+                <h3>
+                    Review Quiz
+                </h3>
+
+                <h4 style="color:#0F9598">
+                    {{message}}
+                </h4>
+
+                <h4 style="color:#0A8A98">
+                    You have {{score}} right answers <br>
+                    You have {{20-score}} wrong answers
+                </h4>
+            </div>
+        <div class="col-lg-4" *ngFor="let data of mapData" style="text-align:center">
+            <div class="alert alert-success" *ngIf="validateAnswer(data.answer,data.right_answer) === 1">
+                <h4>
+                    {{data.key+1}}. Answered
+                </h4>
+            </div>
+            <div class="alert alert-danger" *ngIf="validateAnswer(data.answer,data.right_answer) === 2">
+                <h4>
+                    {{data.key+1}}. Answered
+                </h4>
+            </div>
+            <div class="alert alert-danger" *ngIf="validateAnswer(data.answer,data.right_answer) === 3">
+                <h4>
+                    {{data.key+1}}. Not Answered
+                </h4>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <button type="submit" class="btn btn-default" (click)="resetAnswers()"><i class="fa fa-refresh"></i> Quiz </button>
+            <button type="submit" class="btn btn-default" (click)="reviewQuiz()"><i class="fa fa-search"></i> Review </button>
+            <button type="submit" class="btn btn-default" [disabled]="true"><i class="fa fa-check"></i> Submit Quiz </button>
+        </div>
+    </div>
+</div>
+
+<div class="row" [hidden]="!reviewPage">
+        <div class="col-lg-10 col-lg-offset-1 jumbotron">
+            <div style="text-align:center">
+                <h3>
+                    Review Quiz
+                </h3>
+
+                <h4 style="color:#0F9598">
+                    {{message}}
+                </h4>
+
+                <h4 style="color:#0A8A98">
+                    Your success percentage is {{percentage}}%
+                    You have {{score}} right answers
+                </h4>
+            </div>
+
+            <div class="col-lg-11 col-lg-offset-1 jumbotron" *ngFor="let data of mapData">
+                <h4>{{data.key+1}}. {{data.statement}}</h4>
+                <div *ngFor="let option of data.options; let i = index" class="option2">
+                        <label class="checkbox-inline"><input type="checkbox" [checked]="data.answer == i" [disabled]="true">{{option}}</label>
+                </div>
+
+                <div class="alert alert-success col-lg-11" *ngIf="validateAnswer(data.answer,data.right_answer) === 1">
+                    <h4>
+                        Your answer is correct
+                    </h4>
+                </div>
+
+                 <div class="alert alert-danger col-lg-11" *ngIf="validateAnswer(data.answer,data.right_answer) === 2">
+                    <h4>
+                        Your answer is incorrect
+                    </h4>
+                </div>
+
+                <div class="alert alert-danger col-lg-11" *ngIf="validateAnswer(data.answer,data.right_answer) === 3">
+                   <h4>
+                       Not Answered
+                   </h4>
+               </div>
+            </div>
+
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-default" (click)="resetAnswers()"><i class="fa fa-refresh"></i> Quiz </button>
+            </div>
+        </div>
+    </div>

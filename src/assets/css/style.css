@@ -1,0 +1,33 @@
+.form{
+    margin-top:50px;
+    margin-left: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.option{
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: justify;
+    background-color:  #aed6f1;
+}
+
+.option2{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.checkbox-inline{
+  font-weight:lighter;
+}
+
+.statement-question{
+  text-align: left;
+}
+
+.final-button {
+  margin-top:50px;
+  text-align: left;
+}
