@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
   public questionsPage = true;
   public reviewPage = false;
   public score = 0;
+  public message;
 
   ngOnInit(){
     //from object to array
@@ -96,10 +97,13 @@ export class AppComponent implements OnInit{
     }
 
     if(this.score >=14){
-      this.message = "Good!! You pass";
+      this.message = 'Good!! You pass';
     }else if(this.score === 20){
-      this.message = "Excellent!! You are very smart";
+      this.message = 'Excellent!! You are very smart';
     } else{
-      this.message = "You failed!!!";
+      this.message = 'You failed!!!';
     }
+}
+
+
 }
